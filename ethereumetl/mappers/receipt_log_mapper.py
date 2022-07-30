@@ -76,7 +76,7 @@ class EthReceiptLogMapper(object):
             'block_number': receipt_log.block_number,
             'address': receipt_log.address,
             'data': receipt_log.data,
-            'topics': receipt_log.topics
+            'topics': '|'.join(str(x) for x in receipt_log.topics)
         }
 
     def dict_to_receipt_log(self, dict):
